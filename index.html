@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to bottom right, #3498db, #9b59b6);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 36px;
+            text-align: center;
+            padding-top: 20px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            margin: auto;
+        }
+
+        h2 {
+            color: #333;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        /* Form styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        select, input[type="text"], input[type="date"], input[type="time"], button[type="submit"] {
+            padding: 10px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        button[type="submit"] {
+            background-color: #27ae60;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #219d46;
+        }
+
+        /* Appointment list styles */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        li {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Chatbot button styles */
+        .chatbot-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #27ae60;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            z-index: 1000;
+        }
+
+        .chatbot-btn:hover {
+            background-color: #219d46;
+        }
+    </style>
+</head>
+<body>
+    <h1>Book Appointment</h1>
+    <div class="container">
+        <form method="POST">
+            <div class="form-group">
+                <label for="doctor">Choose Doctor:</label>
+                <select name="doctor" id="doctor">
+                    {% for doctor in doctors %}
+                    <option value="{{ doctor.name }}">{{ doctor.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="patient">Patient Name:</label>
+                <input type="text" name="patient" id="patient">
+            </div>
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date">
+            </div>
+            <div class="form-group">
+                <label for="time">Time:</label>
+                <input type="time" name="time" id="time">
+            </div>
+            <button type="submit">Book Appointment</button>
+        </form>
+        {% if message %}
+        <p>{{ message }}</p>
+        {% endif %}
+        {% if qr_code_data %}
+        <div>
+            <button onclick="toggleQR()">View QR</button>
+            <div id="qr" style="display:none;">
+                <img src="data:image/png;base64,{{ qr_code_data }}" alt="QR Code">
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function toggleQR() {
+            var qrDiv = document.getElementById("qr");
+            if (qrDiv.style.display === "none") {
+                qrDiv.style.display = "block";
+            } else {
+                qrDiv.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
