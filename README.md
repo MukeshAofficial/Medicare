@@ -14,6 +14,7 @@ Authentication system: Ensuring secure access for users through login/signup fun
 Appointment booking: Allowing users to schedule medical appointments conveniently.
 QR code generation: Simplifying appointment management with QR codes for easy access.
 Medical chatbot: Providing users with instant responses to medical inquiries through an intelligent chatbot.
+Report summarizer:It provides users a simple summary of their medical report
 Informative homepage: Featuring FAQs to address common queries and provide users with essential information.
 Challenges Faced
 Despite our dedication to creating a flawless solution, we encountered several challenges along the way. Integrating complex functionalities such as authentication and chatbot systems required meticulous planning and implementation. Additionally, ensuring the platform's scalability and reliability posed significant challenges during development.
@@ -24,6 +25,8 @@ In conclusion, Medicare Solutions represents our commitment to leveraging techno
 
 ![image](https://github.com/MukeshAofficial/CareMatch/assets/132742860/0467beda-67db-4da1-8aac-0c1f453d2aa8)
 ![image](https://github.com/MukeshAofficial/CareMatch/assets/132742860/23c945ba-2f36-461b-a47e-049202425abd)
+![image](https://github.com/MukeshAofficial/CareMatch/assets/132742860/700e9582-c2cc-46ba-b310-40c6bc83fd91)
+
 
 ![image](https://github.com/MukeshAofficial/CareMatch/assets/132742860/a7ba1007-b2db-4c0d-8a7c-7d387df95d7f)
 ![image](https://github.com/MukeshAofficial/CareMatch/assets/132742860/ee00e340-6c5a-4fe4-8270-42348cc50f9d)
